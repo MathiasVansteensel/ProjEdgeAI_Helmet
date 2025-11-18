@@ -1,0 +1,10 @@
+
+path: yolo_dataset
+train: images/train
+val: images/val
+
+names:
+  0: person_with_helmet
+  1: person_without_helmet
+  2: helmet
+  3: head

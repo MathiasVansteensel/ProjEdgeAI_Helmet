@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['hat', 'helmet', 'no_helmet']
+
+roboflow:
+  workspace: luisarizmendi
+  project: hardhat-or-hat
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/luisarizmendi/hardhat-or-hat/dataset/5

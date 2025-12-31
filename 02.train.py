@@ -1,17 +1,21 @@
+# 02.Train.py
 from ultralytics import YOLO
+from config import MODEL_VARIANT, DATASET_YAML, EPOCHS, IMG_SIZE, BATCH_SIZE, DEVICE, SAVE_PERIOD
 
-if __name__ == '__main__':
-    # load pretrained YOLO nano (or small)
-    model = YOLO("models/yolo11s.pt")
+def main():
+    # Load a pretrained model
+    model = YOLO(MODEL_VARIANT)
 
+    # Train the model
     model.train(
-        data="Yolo11Dataset/data.yaml",
-        epochs=250,
-        batch=64,
-        imgsz=512, #640
-        device="0",    # change to "0" if needed
-        save_period=1
-        #time=0.08333
+        data=DATASET_YAML,
+        epochs=EPOCHS,
+        imgsz=IMG_SIZE,
+        batch=BATCH_SIZE,
+        device=DEVICE,
+        save_period=SAVE_PERIOD,
+        plots=True
     )
 
-    print("Training complete.")
+if __name__ == "__main__":
+    main()
